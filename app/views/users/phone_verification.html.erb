@@ -1,0 +1,14 @@
+<div>
+  <%= render 'partials/forms/banner', header_title: I18n.t('labels.user_management.verify_phone_number_header') %>
+
+  <%= render 'partials/forms/container' do %>
+    <%= form_with_styling url: verify_phone_number_user_path, method: :post do |form| %>
+      <%= render 'partials/forms/confirmation_code', form: form, locals: { field_label: :phone_number_confirmation_code, resend_code_path: resend_phone_verification_code_user_path } %>
+      <%= render_field_errors(@user, :phone_number_confirmation_code) %>
+
+      <%= hidden_field_tag :phone_number_confirmation_token, session[:phone_number_confirmation_token] %>
+
+      <%= render 'partials/forms/form_submit', form: form, locals: { form_submit_label: 'user_management.verify_phone_number' } %>
+    <% end %>
+  <% end %>
+</div>

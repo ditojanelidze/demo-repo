@@ -1,0 +1,18 @@
+<div>
+  <%= render 'partials/forms/banner', header_title: I18n.t('labels.user_management.confirm_password_recovery_hint') %>
+
+  <%= render 'partials/forms/container' do %>
+    <%= form_with_styling model: @user, url: password_recovery_path, method: :put, data: {controller: "password-validation", action: "submit->password-validation#validate"} do |form| %>
+
+      <%= render 'partials/forms/confirmation_code', form: form, locals: { field_label: :password_recovery_code, resend_code_path: resend_code_password_recovery_path } %>
+
+      <%= render 'partials/forms/password_input', form: form, locals: { field_label: :password, label_translation: 'user_management.new_password', data: { 'password-validation-target': :password }, show_forgot_password: false } %>
+
+      <%= render 'partials/forms/password_input', form: form, locals: { field_label: :password_confirmation, label_translation: 'user_management.new_password', data: { 'password-validation-target': :password_confirmation }, show_forgot_password: false } %>
+
+      <%= hidden_field_tag :password_recovery_token, session[:password_recovery_token] %>
+
+      <%= render 'partials/forms/form_submit', form: form, locals: { form_submit_label: 'user_management.confirm_and_reset' } %>
+    <% end %>
+  <% end %>
+</div>

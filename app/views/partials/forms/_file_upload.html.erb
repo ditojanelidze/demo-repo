@@ -1,0 +1,13 @@
+<div>
+  <%= form_label(form, :avatar, I18n.t('labels.user_management.avatar')) %>
+
+  <div class="mt-2">
+    <%= form.file_field :avatar,
+                    class: 'w-full text-gray-400 font-semibold text-sm bg-white border file:cursor-pointer cursor-pointer file:border-0 file:py-2 file:px-4 file:mr-4 file:bg-gray-100 file:hover:bg-gray-200 file:text-gray-500 rounded', required: true, readonly: true %>
+
+  </div>
+  <p class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="file_input_help">SVG, PNG, JPG or GIF (MAX. 800x400px).</p>
+
+  <%= turbo_frame_tag "file_upload_errors" do %>
+  <% end %>
+</div>

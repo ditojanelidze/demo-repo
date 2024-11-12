@@ -1,0 +1,9 @@
+<div>
+  <%= form_label(form, locals[:field_label], labels_translation(locals[:label_translation])) %>
+  <div class="mt-2">
+    <%= form.text_field locals[:field_label], data: locals[:data] || {}, class: form_field_styles, required: true %>
+  </div>
+
+  <!-- Display Errors  -->
+  <%= render_field_errors(form.object, locals[:field_label]) %>
+</div>

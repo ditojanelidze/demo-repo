@@ -1,0 +1,4 @@
+<div class="mt-4">
+  <%= form.label locals[:field_label], labels_translation(locals[:label_translation]), class: "block text-sm font-medium text-gray-700" %>
+  <%= form.select locals[:field_label], locals[:options], {}, data: locals[:data] || {}, class: "mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 text-base leading-6 focus:ring-sky-500 focus:border-sky-500 sm:text-sm" %>
+</div>

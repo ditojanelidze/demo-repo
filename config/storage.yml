@@ -1,0 +1,16 @@
+test:
+  service: Disk
+  root: <%= Rails.root.join("tmp/storage") %>
+
+local:
+  service: Disk
+  root: <%= Rails.root.join("storage") %>
+
+# Use bin/rails credentials:edit to set the AWS secrets (as aws:access_key_id|secret_access_key)
+amazon:
+  service: S3
+  access_key_id: <%= ENV['DO_SPACES_ACCESS_KEY'] %>
+  secret_access_key: <%= ENV['DO_SPACES_SECRET_KEY'] %>
+  region: 'fra1'
+  bucket: 'baitmate-staging'
+  endpoint: 'https://fra1.digitaloceanspaces.com'

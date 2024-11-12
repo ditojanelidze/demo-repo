@@ -1,0 +1,28 @@
+service: baitmate
+image: ditojanelidze/baitmate
+
+registry:
+  username: ditojanelidze
+  password:
+    - KAMAL_REGISTRY_PASSWORD
+env:
+  clear:
+    RAILS_ENV: <%= ENV['RAILS_ENV'] %>
+    SSL_DOMAIN: <%= ENV['SSL_DOMAIN'] %>
+    DB_USERNAME: <%= ENV['DB_USERNAME'] %>
+    DB_HOST: <%= ENV['DB_HOST'] %>
+    DB_PORT: <%= ENV['DB_PORT'] %>
+    DB_NAME: <%= ENV['DB_NAME'] %>
+    REDIS_HOST: <%= ENV['REDIS_HOST'] %>
+    DO_SPACES_ACCESS_KEY: <%= ENV['DO_SPACES_ACCESS_KEY'] %>
+    DO_SPACES_SECRET_KEY: <%= ENV['DO_SPACES_SECRET_KEY'] %>
+  secret:
+    - RAILS_MASTER_KEY
+    - REDIS_PASSWORD
+    - DB_PASSWORD
+
+builder:
+  arch: amd64
+  context: .
+  args:
+    ENVIRONMENT: <%= ENV['RAILS_ENV'] %>

@@ -1,0 +1,32 @@
+<div style="position: fixed; bottom: 0; left: 0; width: 100%; background-color: lightgray;">
+  <nav class="bg-white fixed inset-x-0 bottom-0 z-10 sm:hidden border-gray-200">
+    <div class="flex justify-around px-0 py-1 border border-gray-200">
+      <li class="flex flex-col items-center">
+        <%= nav_link root_path, 'home' %>
+      </li>
+
+      <!-- Anglers Blog -->
+      <li class="flex flex-col items-center">
+        <%= nav_link blog_path, 'blog' %>
+      </li>
+
+      <!-- My Network -->
+      <% if current_user %>
+        <!-- New Post -->
+        <li class="flex flex-col items-center">
+          <%= nav_link new_post_path, 'plus' %>
+        </li>
+      <% end %>
+
+      <!-- Map -->
+      <li class="flex flex-col items-center">
+        <%= nav_link map_path, 'map' %>
+      </li>
+
+      <!-- About Baitmate -->
+      <li class="flex flex-col items-center">
+        <%= nav_link about_us_path, 'loop' %>
+      </li>
+    </div>
+  </nav>
+</div>

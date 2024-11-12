@@ -1,0 +1,3 @@
+#!/usr/bin/env sh
+
+dotenv -f .env.staging kamal deploy -d staging

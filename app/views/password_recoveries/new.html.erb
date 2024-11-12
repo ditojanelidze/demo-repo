@@ -1,0 +1,12 @@
+<div>
+  <%= render 'partials/forms/banner', header_title: I18n.t('labels.user_management.password_recovery_hint') %>
+
+  <%= render 'partials/forms/container' do %>
+    <%= form_with_styling model: @user, url: password_recovery_path, method: :post, data: { controller: "phone-number-change phone-format" } do |form| %>
+
+      <%= render 'partials/forms/phone_number_input', form: form, locals: { data: { "phone-format-target": "phoneNumberInput", action: "input->phone-format#formatPhoneNumber" }, readonly: false } %>
+
+      <%= render 'partials/forms/form_submit', form: form, locals: { form_submit_label:  'user_management.send_confirmation_code' } %>
+    <% end %>
+  <% end %>
+</div>

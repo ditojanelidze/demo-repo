@@ -1,0 +1,15 @@
+<div>
+  <div class="flex items-center justify-between">
+    <%= form_label(form, locals[:field_label], I18n.t('labels.user_management.confirmation_code')) %>
+
+    <div class="text-sm">
+      <%= link_to I18n.t('labels.user_management.resend_confirmation_code'),
+                  locals[:resend_code_path],
+                  class: 'font-semibold text-sky-600 hover:text-sky-500' %>
+    </div>
+  </div>
+  <div class="mt-2">
+    <%= form.text_field locals[:field_label], class: form_field_styles, autocomplete: 'current-password', required: true %>
+  </div>
+  <% render_field_errors(@user, locals[:field_label]) %>
+</div>

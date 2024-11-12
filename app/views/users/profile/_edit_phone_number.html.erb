@@ -1,0 +1,4 @@
+<%= form_with_styling model: @user, url: user_path(current_user), method: :put, local: true, data: { controller: "phone-number-change phone-format" } do |form| %>
+  <%= render 'partials/forms/phone_number_input', form: form, locals: { data: { "phone-number-change-target": "phoneNumberInput", "phone-format-target": "phoneNumberInput", action: "input->phone-format#formatPhoneNumber input->phone-number-change#checkForChanges" } } %>
+  <%= render 'partials/forms/form_submit', form: form, locals: { form_submit_label: 'user_management.init_phone_number_update', data: { "phone-number-change-target": "submitButton" }, disabled: true } %>
+<% end %>

@@ -1,0 +1,17 @@
+<div>
+  <%= render 'partials/forms/banner', header_title: I18n.t('labels.user_management.sign_in_header') %>
+
+  <%= render 'partials/forms/container' do %>
+    <%= form_with_styling model: @user, url: session_path, method: :post, data: { controller: "phone-format" } do |form| %>
+      <%= render 'partials/forms/phone_number_input', form: form, locals: { data: { "phone-format-target": "phoneNumberInput", action: "input->phone-format#formatPhoneNumber" }, readonly: false } %>
+
+      <%= render 'partials/forms/password_input', form: form, locals: { field_label: :password, label_translation: 'user_management.password', show_forgot_password: true } %>
+
+      <%= render 'partials/flash' %>
+
+      <%= render 'partials/forms/form_submit', form: form, locals: { form_submit_label: 'user_management.sign_in' }  %>
+    <% end %>
+
+    <%= render 'partials/forms/account_cta', action_path: new_user_path, label_translation: 'user_management.not_a_member', link_label_translation: 'user_management.sign_up' %>
+  <% end %>
+</div>

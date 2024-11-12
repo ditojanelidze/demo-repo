@@ -1,0 +1,22 @@
+<nav class="bg-white hidden sm:block">
+  <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+    <div class="relative flex h-16 items-center">
+      <!-- Home banner -->
+      <%= render 'layouts/header/home_banner' %>
+
+      <!-- Search bar -->
+      <%= render 'layouts/header/search_bar' %>
+
+      <!-- navigation Menu -->
+      <%= render 'layouts/header/nav' %>
+
+      <!-- Profile -->
+      <div class="ml-auto hidden sm:block">
+        <%= render 'layouts/header/profile' %>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Header -->
+<%= render 'layouts/header/mobile_header' %>

@@ -1,0 +1,30 @@
+<nav class="hidden justify-between sm:flex sm:ml-20">
+  <ul class="flex space-x-8">
+    <!-- Home -->
+    <li class="flex flex-col items-center">
+      <%= nav_link root_path, 'home' %>
+    </li>
+
+    <!-- My Network -->
+    <% if current_user %>
+      <li class="flex flex-col items-center">
+        <%= nav_link my_network_path, 'my_network' %>
+      </li>
+    <% end %>
+
+    <!-- Anglers Blog -->
+    <li class="flex flex-col items-center">
+      <%= nav_link blog_path, 'blog' %>
+    </li>
+
+    <!-- Map -->
+    <li class="flex flex-col items-center">
+      <%= nav_link map_path, 'map' %>
+    </li>
+
+    <!-- About Baitmate -->
+    <li class="flex flex-col items-center">
+      <%= nav_link about_us_path, 'about_us' %>
+    </li>
+  </ul>
+</nav>

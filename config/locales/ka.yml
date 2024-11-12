@@ -1,0 +1,56 @@
+ka:
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            phone_number_confirmation_code:
+              expired: time expired
+  labels:
+    navigation:
+      home: Home
+      my_network: My Network
+      blog: Anglers Blog
+      about_us: About BaitMate
+      map: Map
+      search: Search
+      profile: Profile
+      sign_in: Sign In
+      sign_out: Sign Out
+      sign_up: Sign Up
+    user_management:
+      first_name: First Name
+      last_name: Last Name
+      not_a_member: Not a member?
+      forgot_password: Forgot password?
+      phone_number: Phone number
+      password: Password
+      sign_in_header: Sign in to your account
+      sign_up_header: Sign in to your account
+      sign_in: Sign in
+      sign_up: Sign up
+      verify_phone_number: Verify
+      verify_phone_number_header: 'Enter the code sent to your phone'
+      already_have_account: Already have an account?
+      password_recovery: Password Recovery
+      password_recovery_hint: Enter your phone number to receive a confirmation code.
+      password_changed: Password changes successfully
+      confirm_password_recovery: Confirm Password Recovery
+      confirm_password_recovery_hint: Enter the confirmation code sent to your phone, along with your new password.
+      confirmation_code: Confirmation Code
+      could_not_resend_confirmation_code: Could not resend confirmation code
+      resend_confirmation_code: Resend code
+      new_password: New Password
+      new_password_confirmation: Confirm New Password
+      password_confirmation: Confirm Password
+      confirm_and_reset: Confirm and Reset Password
+      send_confirmation_code: Send Confirmation Code
+      phone_number_iso: Phone Number ISO Code
+  custom_errors:
+    login_failure: Phone number or password is incorrect
+    passwords_mismatch: Passwords do not match
+    passwords_invalid: Password must be at least 8 characters long and contain at least one letter and one number.
+    invalid_phone_number: Phone number is invalid
+  sms:
+    sign_up_confirmation_code: Baitmate signup confirmation code - %{code}
+    password_recovery_confirmation_code: Baitmate password recovery confirmation code - %{code}

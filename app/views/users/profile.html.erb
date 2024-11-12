@@ -1,0 +1,16 @@
+<div class="">
+  <div class="flex flex-col items-center">
+    <%= render 'users/profile/profile_header' %>
+
+    <%= svg_button(edit_user_path(current_user), :settings) %>
+  </div>
+
+  <div>
+    <%= render 'posts/profile_posts', posts: @posts %>
+    <!-- Spinner for loading more posts -->
+    <div id="loading-spinner" class="text-center my-6 hidden">
+      <p>Loading...</p>
+    </div>
+  </div>
+</div>
+

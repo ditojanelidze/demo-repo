@@ -1,0 +1,9 @@
+<div>
+  <h1>
+    <% if current_user %>
+      <%= current_user.first_name %>
+    <% else %>
+      <%= 'Guest User' %>
+    <% end %>
+  </h1>
+</div>

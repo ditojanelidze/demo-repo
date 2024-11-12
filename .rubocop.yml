@@ -1,0 +1,26 @@
+require:
+  - rubocop-rails
+  - rubocop-rspec
+  - rubocop-factory_bot
+  - rubocop-capybara
+
+AllCops:
+  TargetRubyVersion: 3.3 # Adjust to your project's Ruby version
+  SuggestExtensions: false
+  NewCops: enable
+
+# You can add specific configurations for each extension here
+Rails:
+  Enabled: true
+
+RSpec:
+  Enabled: true
+
+Style/Documentation:
+  Enabled: false
+
+Metrics/MethodLength:
+  Enabled: false
+
+Metrics/AbcSize:
+  Enabled: false

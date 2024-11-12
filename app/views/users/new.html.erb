@@ -1,0 +1,22 @@
+<div>
+  <%= render 'partials/forms/banner', header_title:  I18n.t('labels.user_management.sign_up_header')%>
+
+  <%= render 'partials/forms/container' do %>
+    <%= form_with_styling model: @user, url: users_path, method: :post, data: { controller: "password-validation phone-format", action: "submit->password-validation#validate" } do |form| %>
+      <%= render 'partials/forms/text_field', form: form, locals: { field_label: :first_name, label_translation: 'user_management.first_name' }%>
+
+      <%= render 'partials/forms/text_field', form: form, locals: { field_label: :last_name, label_translation: 'user_management.last_name' } %>
+
+      <%= render 'partials/forms/phone_number_input', form: form, locals: {data: { "phone-format-target": "phoneNumberInput", action: "input->phone-format#formatPhoneNumber" }, readonly: false} %>
+
+      <%= render 'partials/forms/password_input', form: form, locals: {field_label: :password, label_translation: 'user_management.password', data: { 'password-validation-target': :password }, show_forgot_password: false} %>
+
+      <%= render 'partials/forms/password_input', form: form, locals: {field_label: :password_confirmation, label_translation: 'user_management.password_confirmation',  data: { 'password-validation-target': :password_confirmation }, show_forgot_password: false } %>
+
+      <%= render 'partials/forms/form_submit', form: form, locals: {form_submit_label: 'user_management.sign_up'} %>
+    <% end %>
+
+    <%= render 'partials/forms/account_cta', action_path: new_session_path, label_translation: 'user_management.already_have_account', link_label_translation: 'user_management.sign_in' %>
+
+  <% end %>
+</div>
